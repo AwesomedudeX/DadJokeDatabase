@@ -54,14 +54,14 @@ if mode == "Get a Joke":
 
 else:
     
+    st.write(":grey[Note: Markdown bold and/or italic text formats are supported.]")
+
     c1, c2 = st.columns(2)
 
     p1 = c1.text_input("**Question/Context:**")
     p2 = c2.text_input("**Answer/Punchline:**")
 
     if st.button("Add Joke"):
-
-        st.write(":grey[Note: Markdown bold and/or italic text formats are supported.]")
             
         if p1 == "":
             st.write("**You need a question or context!**")
