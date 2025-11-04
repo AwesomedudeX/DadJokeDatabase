@@ -48,8 +48,6 @@ if mode == "Get a Joke":
 
     if st.button("**Get a Joke**"):
 
-        st.write(jokes[jokeindex])
-
         st.write(jokes[jokeindex][0])
         pause(2)
         st.write(jokes[jokeindex][1])
