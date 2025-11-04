@@ -41,8 +41,6 @@ for joke in linelst:
 
     jokes.append(addjoke)
 
-st.write(jokes)
-
 if mode == "Get a Joke":
 
     jokeindex = np.random.randint(0, len(jokes))
