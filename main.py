@@ -7,7 +7,7 @@ st.set_page_config("Dad Joke Database", "🤣", "wide", "expanded")
 def addJoke(p1, p2):
     
     currentjokes = open("jokes.txt", "r").read()
-    newjokes = currentjokes + f"{p1} | {p2}\n"
+    newjokes = currentjokes + f"\n{p1} | {p2}"
 
     open("jokes.txt", "w").write(newjokes)
 
@@ -24,14 +24,13 @@ sidebar = st.sidebar
 mode = st.radio("**Mode:**", ["Get a Joke", "Add a Joke"])
 
 read = open("jokes.txt", "r").read()
-linelst = read.split("\n")
+rawlst = read.split("\n")
+linelst = []
 jokes = []
 
-while (linelst[-1]) == "":
-    linelst = linelst[:-1]
-
-while (linelst[0]) == "":
-    linelst = linelst[1:]
+for line in rawlst:
+    if line != "":
+        linelst.append(line)
 
 for joke in linelst:
 
@@ -41,6 +40,8 @@ for joke in linelst:
         addjoke.append(part)
 
     jokes.append(addjoke)
+
+st.write(jokes)
 
 if mode == "Get a Joke":
 
