@@ -60,6 +60,8 @@ else:
     p2 = c2.text_input("**Answer/Punchline:**")
 
     if st.button("Add Joke"):
+
+        st.write(":grey[Note: Markdown bold and/or italic text formats are supported.]")
             
         if p1 == "":
             st.write("**You need a question or context!**")
